@@ -1,7 +1,11 @@
 
 #marketing-content {
-  width: 80%;
-  padding: 5% 10%;
+  width: 60%;
+  padding: 5% 20%;
+  @media (max-width: 500px) {
+    width: 80%;
+    padding: 15% 10%;
+  }
 
   .section1 {
     .title {
@@ -9,8 +13,31 @@
       font-weight: 600;
     }
 
-    .desc{
+    .desc {
       margin-top: 12px;
     }
+
+    .indicator {
+      margin-top: 12px;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+
+      .footer {
+        background-color: #637586;
+        width: 100%;
+        height: 50px;
+        margin-top: -5px;
+
+
+      }
+    }
+  }
+
+  .section2 {
+    width: 100%;
+    height: 500px;
   }
 }
