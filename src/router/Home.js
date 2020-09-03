@@ -1,10 +1,11 @@
-import Home from "../views/Home";
+import MarketingHome from "../views/MarketingHome";
 
 export default [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/', redirect: '/marketing'
   },
+  {
+    path: '/marketing', name: 'MarketingHome', component: MarketingHome,
+  }
 ]
 

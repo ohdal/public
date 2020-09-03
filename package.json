@@ -1,8 +1,9 @@
 {
-  "name": "my-board",
+  "name": "homepage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "yarn run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,7 +13,8 @@
     "element-ui": "^2.13.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -45,5 +47,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/ohdal/MyHomepage.git",
+  "author": "HyeonJeong <yoonhj97@naver.com>",
+  "license": "MIT"
 }
