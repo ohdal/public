@@ -16,6 +16,7 @@ body {
     margin: 0;
 
     #header {
+      z-index: 10;
       position: fixed;
       top: 0;
       width: 100%;
@@ -29,6 +30,7 @@ body {
         cursor: pointer;
 
         &:hover, &.is-active {
+          border-bottom: 2px solid #c94f4f;
           background-color: #637586;
           font-weight: 700;
         }

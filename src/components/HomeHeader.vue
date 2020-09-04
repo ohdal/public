@@ -1,7 +1,8 @@
 <template>
   <div id="header">
     <div v-if="type === 1">
-      <div class="home-header type1" @click="menuClick($event)"
+      <div class="home-header type1" @click.left="menuClick($event)"
+           :class="{'is-active': item.title === title}"
            :style="{'width' : (100 / menus.length) + '%'}"
            :key="item.id" v-for="item in menus">
         {{item.title}}
@@ -24,7 +25,7 @@
     },
     data() {
       return {
-        menus: this.data, isClick: false,
+        menus: this.data, isClick: false, title: 'Home',
       }
     },
     methods: {
@@ -33,7 +34,7 @@
         if (el.length > 0) {
           el[0].classList.remove('is-active')
         }
-        e.target.classList.add('is-active')
+        this.title = e.target.innerText
       }
     }
   }
