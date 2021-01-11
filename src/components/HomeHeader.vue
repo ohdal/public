@@ -1,12 +1,13 @@
 <template>
   <div id="header">
     <div v-if="type === 1">
-      <div class="home-header type1" @click.left="menuClick($event)"
-           :class="{'is-active': item.title === title}"
-           :style="{'width' : (100 / menus.length) + '%'}"
-           :key="item.id" v-for="item in menus">
+      <a class="home-header type1" @click.left="menuClick($event)"
+         :class="{'is-active': item.title === title}"
+         :style="{'width' : (100 / menus.length) + '%'}"
+         :key="item.id" v-for="item in menus"
+         :href="item.a? item.a : ''">
         {{item.title}}
-      </div>
+      </a>
     </div>
   </div>
 </template>

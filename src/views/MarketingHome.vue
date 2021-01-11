@@ -6,7 +6,7 @@
         <p class="title">MARKETING</p>
         <p class="desc">Template by w3.css</p>
         <div class="indicator">
-          <img :src="IDimages[index].src"/>
+          <img :src="S1_IMAGES[index].src"/>
           <div class="footer">
             <el-row>
               <el-col :span="4">
@@ -36,11 +36,11 @@
             <p class="desc">{{item.content}}</p>
           </div>
         </div>
-        <p class="s2-sub-title">Pricing Plans<br>
+        <p id="Plans" class="s2-sub-title">Pricing Plans<br>
           <span>Choose a pricing plan that fits your needs.</span></p>
         <div class="price-box">
           <div class="card"
-               v-for="item in PRICE_DATA" :key="item.id">
+               v-for="item in S2_PRICE_DATA" :key="item.id">
             <p class="card-title">{{item.title}}</p>
             <p><strong>{{item.storage}}</strong> Storage</p>
             <p><strong>{{item.emails}}</strong> Emails</p>
@@ -56,8 +56,33 @@
           </div>
         </div>
       </div>
-      <div class="section3">
+      <div id="About" class="section3">
         <div class="s3-title"><p>Who We Are</p></div>
+        <div class="team">
+          <div class="card" v-for="item in S3_DATA" :key="item.id">
+            <img :src="item.src">
+            <p style="font-size: 20px; font-weight: 600">{{item.name}}</p>
+            <p style="font-size: 14px; color: #a5a5a5;">{{item.role}}</p>
+            <p style="font-size: 14px;">{{item.content}}</p>
+            <div class="contact-btn">
+              <button>Contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="Contact" class="section4">
+        <div class="s4-title"><p>Contact Us</p></div>
+        <div class="input-form">
+          Name<br/>
+          <input />
+          Email<br/>
+          <input />
+          Subject<br/>
+          <input />
+          Message<br/>
+          <input /> <br/>
+          <button>Send</button>
+        </div>
       </div>
     </div>
   </div>
@@ -67,16 +92,16 @@
   import HomeHeader from "../components/HomeHeader";
 
   const headerMenus = [{
-    id: 1, title: 'Home',
+    id: 1, title: 'Home', a: '#',
   }, {
-    id: 2, title: 'Plans',
+    id: 2, title: 'Plans', a: '#Plans',
   }, {
-    id: 3, title: 'About',
+    id: 3, title: 'About', a: '#About',
   }, {
-    id: 4, title: 'Contact',
+    id: 4, title: 'Contact', a: '#Contact',
   },]
 
-  const IDimages = [{
+  const S1_IMAGES = [{
     id: 1, src: require('../assets/images/Marketing/indicator1.jpg'),
   }, {
     id: 2, src: require('../assets/images/Marketing/indicator2.jpg'),
@@ -110,7 +135,7 @@
     color: '#ffffff',
   },]
 
-  const PRICE_DATA = [{
+  const S2_PRICE_DATA = [{
     id: 1, title: 'Basic', storage: '10GB', emails: 10, domains: 10, support: 'Endless', price: 10, standard: 'month',
   }, {
     id: 2, title: 'Pro', storage: '25GB', emails: 25, domains: 25, support: 'Endless', price: 25, standard: 'month',
@@ -118,12 +143,33 @@
     id: 1, title: 'Premium', storage: '50GB', emails: 50, domains: 50, support: 'Endless', price: 50, standard: 'month',
   },]
 
+  const S3_DATA = [{
+    id: 1,
+    src: require('../assets/images/Marketing/team1.jpg'),
+    name: 'Jane Doe',
+    role: 'CEO & Founder',
+    content: 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+  }, {
+    id: 2,
+    src: require('../assets/images/Marketing/team2.jpg'),
+    name: 'Mike Ross',
+    role: 'Art Director',
+    content: 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+  }, {
+    id: 3,
+    src: require('../assets/images/Marketing/team3.jpg'),
+    name: 'John Doe',
+    role: 'Designer',
+    content: 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+  },]
+
   export default {
     name: 'Home',
     components: {HomeHeader,},
     data() {
       return {
-        headerMenus, IDimages, S2_DATA, PRICE_DATA,
+        headerMenus, S1_IMAGES,
+        S2_DATA, S2_PRICE_DATA, S3_DATA,
         index: 0, count: 0,
       }
     },
